@@ -7,13 +7,11 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 import kpisRoutes from "./routes/kpi.js";
 import KPI from "./modules/KPI.js";
-import productsRoutes from "./routes/product.js"
+import productsRoutes from "./routes/product.js";
 import Transaction from "./modules/Transaction.js";
-import  Product  from "./modules/Product.js";
-import trasactionRoutes from "./routes/transaction.js"
+import Product from "./modules/Product.js";
+import trasactionRoutes from "./routes/transaction.js";
 import { kpis, products, transactions } from "./data/data.js";
-
-dotenv.config();
 
 dotenv.config();
 const app = express();
@@ -23,11 +21,15 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
+const corsOptions = {
+  origin: "https://pigpay.vercel.app/",
+};
+
+app.use(cors(corsOptions));
 
 app.use("/kpi", kpisRoutes);
 app.use("/product", productsRoutes);
-app.use("/transaction", trasactionRoutes)
+app.use("/transaction", trasactionRoutes);
 
 const PORT = process.env.PORT || 9000;
 mongoose.Promise = global.Promise;
