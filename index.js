@@ -22,9 +22,6 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const corsOptions = {
-  origin: "https://pigpay.vercel.app/",
-};
 
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -33,7 +30,10 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(cors(corsOptions));
+app.use(cors({
+  origin:"https://pigpay.vercel.app/",
+  methods:["GET"],
+}));
 
 
 app.use("/kpi", kpisRoutes);
