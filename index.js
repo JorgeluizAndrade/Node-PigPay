@@ -24,8 +24,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Origin', "https://pigpay.vercel.app/", '*');
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE")
+  res.header("Access-Control-Allow-credentials", true),
   res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization');
   next();
 });
@@ -40,7 +41,7 @@ app.use("/kpi", kpisRoutes);
 app.use("/product", productsRoutes);
 app.use("/transaction", trasactionRoutes);
 
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT;
 mongoose.Promise = global.Promise;
 
 mongoose
