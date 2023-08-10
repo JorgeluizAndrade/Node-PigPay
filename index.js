@@ -21,11 +21,20 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 const corsOptions = {
-  origin: "https://pigpay.vercel.app/",
+  origin: "https://pigpay.vercel.app",
 };
 
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  next();
+});
+
 app.use(cors(corsOptions));
+
 
 app.use("/kpi", kpisRoutes);
 app.use("/product", productsRoutes);
