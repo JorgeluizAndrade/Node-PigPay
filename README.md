@@ -8,18 +8,22 @@ Fullstack project with Node and Reactjs.
 <li>Cors</li>
 
  ## Project Structure
-        |-- controllers/
-        |   |-- Controllers.js
-        |-- models/
-        |   |-- Models.js
-        |-- routes/
-        |   |-- Routes.js
-        |-- .env
-        |-- .gitignore
-        |-- package.json
-        |-- README.md
-        |-- server.js
-
+      |-- Data/
+      |   |-- data.js
+      |-- Db/
+      |   |-- db.js
+      |-- .env
+      |-- .gitignore
+      |-- package.json
+      |-- README.md
+      |-- index.js
+      |-- controllers/
+      |   |-- Controllers.js.js
+      |-- models/
+      |   |-- Models.js.js
+      |-- routes/
+      |   |-- Routes.js
+      
 <li>controllers/: Contains your application controllers.</li>
 <li>Controllers.js: Example controller file.</li>
 <li>models/: Stores database data models.</li>
