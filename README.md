@@ -18,9 +18,9 @@ Fullstack project with Node and Reactjs.
       |-- README.md
       |-- index.js
       |-- controllers/
-      |   |-- Controllers.js.js
+      |   |-- Controllers.js
       |-- models/
-      |   |-- Models.js.js
+      |   |-- Models.js
       |-- routes/
       |   |-- Routes.js
       
