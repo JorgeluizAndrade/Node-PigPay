@@ -1,7 +1,7 @@
 import { mongoose } from 'mongoose'
-// import KPI from "./modules/KPI.js";
-// import Transaction from "./modules/Transaction.js";
-// import Product from "./modules/Product.js";
+// import KPI from "./models/KPI.js";
+// import Transaction from "./models/Transaction.js";
+// import Product from "./models/Product.js";
 // import { kpis, products, transactions } from "./data/data.js";
 
 
